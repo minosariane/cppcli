@@ -198,29 +198,29 @@ src/Class.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/src/Class.cpp.s
 .PHONY : src/Class.cpp.s
 
-src/Color.o: src/Color.cpp.o
-.PHONY : src/Color.o
+src/Colour.o: src/Colour.cpp.o
+.PHONY : src/Colour.o
 
 # target to build an object file
-src/Color.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/src/Color.cpp.o
-.PHONY : src/Color.cpp.o
+src/Colour.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/src/Colour.cpp.o
+.PHONY : src/Colour.cpp.o
 
-src/Color.i: src/Color.cpp.i
-.PHONY : src/Color.i
+src/Colour.i: src/Colour.cpp.i
+.PHONY : src/Colour.i
 
 # target to preprocess a source file
-src/Color.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/src/Color.cpp.i
-.PHONY : src/Color.cpp.i
+src/Colour.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/src/Colour.cpp.i
+.PHONY : src/Colour.cpp.i
 
-src/Color.s: src/Color.cpp.s
-.PHONY : src/Color.s
+src/Colour.s: src/Colour.cpp.s
+.PHONY : src/Colour.s
 
 # target to generate assembly for a file
-src/Color.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/src/Color.cpp.s
-.PHONY : src/Color.cpp.s
+src/Colour.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/src/Colour.cpp.s
+.PHONY : src/Colour.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -262,9 +262,9 @@ help:
 	@echo "... src/Class.o"
 	@echo "... src/Class.i"
 	@echo "... src/Class.s"
-	@echo "... src/Color.o"
-	@echo "... src/Color.i"
-	@echo "... src/Color.s"
+	@echo "... src/Colour.o"
+	@echo "... src/Colour.i"
+	@echo "... src/Colour.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

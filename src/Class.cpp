@@ -2,6 +2,11 @@
 #include <iostream>
 #include <regex>
 
+/**
+ * @brief Construct a new Class:: Class object
+ * 
+ * @param name 
+ */
 Class::Class(std::string& name)
 {
     this->setName(name);
@@ -21,41 +26,79 @@ Class::Class(std::string& name)
     this->CPP += "{\n\n}\n\n";
 }
 
+/**
+ * @brief Destroy the Class:: Class object
+ * 
+ */
 Class::~Class()
 {
 
 }
 
+/**
+ * @brief 
+ * 
+ * @param name 
+ */
 void Class::setName(std::string& name)
 {
     this->name = toUcFirst(name);
 }
 
+/**
+ * @brief 
+ * 
+ * @return std::string 
+ */
 std::string Class::getName()
 {
     return this->name;
 }
 
+/**
+ * @brief 
+ * 
+ * @param content 
+ */
 void Class::setHPP(std::string& content)
 {
     this->HPP = content;
 }
 
+/**
+ * @brief 
+ * 
+ * @param content 
+ */
 void Class::setCPP(std::string& content)
 {
     this->CPP = content;
 }
 
+/**
+ * @brief 
+ * 
+ * @param members 
+ */
 void Class::setMembers(std::vector<std::pair<std::string, std::string>>& members)
 {
     this->members = members;
 }
 
+/**
+ * @brief 
+ * 
+ * @param methods 
+ */
 void Class::setMethods(std::vector<std::pair<std::string, std::string>>& methods)
 {
     this->methods = methods;
 }
 
+/**
+ * @brief 
+ * 
+ */
 void Class::addSettersGetters()
 {
     std::regex regex(R"((\n\tprivate\:))");
@@ -73,6 +116,10 @@ void Class::addSettersGetters()
     }
 }
 
+/**
+ * @brief 
+ * 
+ */
 void Class::generate()
 {
     std::regex regex(R"((\n};))");
@@ -96,6 +143,10 @@ void Class::generate()
     this->write(path, this->CPP);   
 }
 
+/**
+ * @brief 
+ * 
+ */
 void Class::preview()
 {
     std::cout << "\n/// HPP\n\n" << this->HPP << "\n\n/// CPP\n\n" << this->CPP << std::endl;
@@ -103,6 +154,12 @@ void Class::preview()
 
 // PRIVATE
 
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @return std::string 
+ */
 std::string Class::toUpperCase(std::string& str)
 {
     std::string res = str;
@@ -113,6 +170,12 @@ std::string Class::toUpperCase(std::string& str)
     return res;
 }
 
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @return std::string 
+ */
 std::string Class::toUcFirst(std::string& str)
 {
     std::string res = str;
@@ -121,6 +184,12 @@ std::string Class::toUcFirst(std::string& str)
     return res;
 }
 
+/**
+ * @brief 
+ * 
+ * @param path 
+ * @param content 
+ */
 void Class::write(std::string& path, std::string& content)
 {
     this->fileStream.open(path, std::ios::out);

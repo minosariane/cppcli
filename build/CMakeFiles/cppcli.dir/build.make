@@ -83,19 +83,19 @@ CMakeFiles/cppcli.dir/src/Class.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppcli.dir/src/Class.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mickael/Documents/dev/cpp/cppcli/src/Class.cpp -o CMakeFiles/cppcli.dir/src/Class.cpp.s
 
-CMakeFiles/cppcli.dir/src/Color.cpp.o: CMakeFiles/cppcli.dir/flags.make
-CMakeFiles/cppcli.dir/src/Color.cpp.o: /home/mickael/Documents/dev/cpp/cppcli/src/Color.cpp
-CMakeFiles/cppcli.dir/src/Color.cpp.o: CMakeFiles/cppcli.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mickael/Documents/dev/cpp/cppcli/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cppcli.dir/src/Color.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cppcli.dir/src/Color.cpp.o -MF CMakeFiles/cppcli.dir/src/Color.cpp.o.d -o CMakeFiles/cppcli.dir/src/Color.cpp.o -c /home/mickael/Documents/dev/cpp/cppcli/src/Color.cpp
+CMakeFiles/cppcli.dir/src/Colour.cpp.o: CMakeFiles/cppcli.dir/flags.make
+CMakeFiles/cppcli.dir/src/Colour.cpp.o: /home/mickael/Documents/dev/cpp/cppcli/src/Colour.cpp
+CMakeFiles/cppcli.dir/src/Colour.cpp.o: CMakeFiles/cppcli.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mickael/Documents/dev/cpp/cppcli/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/cppcli.dir/src/Colour.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cppcli.dir/src/Colour.cpp.o -MF CMakeFiles/cppcli.dir/src/Colour.cpp.o.d -o CMakeFiles/cppcli.dir/src/Colour.cpp.o -c /home/mickael/Documents/dev/cpp/cppcli/src/Colour.cpp
 
-CMakeFiles/cppcli.dir/src/Color.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppcli.dir/src/Color.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mickael/Documents/dev/cpp/cppcli/src/Color.cpp > CMakeFiles/cppcli.dir/src/Color.cpp.i
+CMakeFiles/cppcli.dir/src/Colour.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cppcli.dir/src/Colour.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mickael/Documents/dev/cpp/cppcli/src/Colour.cpp > CMakeFiles/cppcli.dir/src/Colour.cpp.i
 
-CMakeFiles/cppcli.dir/src/Color.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppcli.dir/src/Color.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mickael/Documents/dev/cpp/cppcli/src/Color.cpp -o CMakeFiles/cppcli.dir/src/Color.cpp.s
+CMakeFiles/cppcli.dir/src/Colour.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cppcli.dir/src/Colour.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mickael/Documents/dev/cpp/cppcli/src/Colour.cpp -o CMakeFiles/cppcli.dir/src/Colour.cpp.s
 
 CMakeFiles/cppcli.dir/src/main.cpp.o: CMakeFiles/cppcli.dir/flags.make
 CMakeFiles/cppcli.dir/src/main.cpp.o: /home/mickael/Documents/dev/cpp/cppcli/src/main.cpp
@@ -114,14 +114,14 @@ CMakeFiles/cppcli.dir/src/main.cpp.s: cmake_force
 # Object files for target cppcli
 cppcli_OBJECTS = \
 "CMakeFiles/cppcli.dir/src/Class.cpp.o" \
-"CMakeFiles/cppcli.dir/src/Color.cpp.o" \
+"CMakeFiles/cppcli.dir/src/Colour.cpp.o" \
 "CMakeFiles/cppcli.dir/src/main.cpp.o"
 
 # External object files for target cppcli
 cppcli_EXTERNAL_OBJECTS =
 
 bin/cppcli: CMakeFiles/cppcli.dir/src/Class.cpp.o
-bin/cppcli: CMakeFiles/cppcli.dir/src/Color.cpp.o
+bin/cppcli: CMakeFiles/cppcli.dir/src/Colour.cpp.o
 bin/cppcli: CMakeFiles/cppcli.dir/src/main.cpp.o
 bin/cppcli: CMakeFiles/cppcli.dir/build.make
 bin/cppcli: CMakeFiles/cppcli.dir/link.txt

@@ -9,7 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mickael/Documents/dev/cpp/cppcli/src/Class.cpp" "CMakeFiles/cppcli.dir/src/Class.cpp.o" "gcc" "CMakeFiles/cppcli.dir/src/Class.cpp.o.d"
-  "/home/mickael/Documents/dev/cpp/cppcli/src/Color.cpp" "CMakeFiles/cppcli.dir/src/Color.cpp.o" "gcc" "CMakeFiles/cppcli.dir/src/Color.cpp.o.d"
+  "/home/mickael/Documents/dev/cpp/cppcli/src/Colour.cpp" "CMakeFiles/cppcli.dir/src/Colour.cpp.o" "gcc" "CMakeFiles/cppcli.dir/src/Colour.cpp.o.d"
   "/home/mickael/Documents/dev/cpp/cppcli/src/main.cpp" "CMakeFiles/cppcli.dir/src/main.cpp.o" "gcc" "CMakeFiles/cppcli.dir/src/main.cpp.o.d"
   )
 
