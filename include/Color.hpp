@@ -3,11 +3,10 @@
 
 #include <string>
 
-class Color
+namespace Color
 {
-	public:
-	static std::string Green(std::string txt);
-	static std::string Yellow(std::string txt);
+	std::string Green(std::string txt);
+	std::string Yellow(std::string txt);
 };
 
 #endif//COLOR_HPP
