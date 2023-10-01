@@ -16,5 +16,5 @@ Create a class:
 
 then a prompt will guide you through the creation of the class, or edit an existing one.
 
-#TODO
+### TODO
 I need to refactor the code.
