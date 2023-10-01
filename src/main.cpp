@@ -102,7 +102,7 @@ void makeClass() {
 	std::string inputName, inputReturnType, choice;
 
 	int option;
-	std::cout << "\033[32mAdd methods[\033[33m1\033[32m] or members[\033[33m2\033[32m] ? \033[0m";
+	std::cout << "\033[32mAdd methods[\033[33m1\033[32m] or members[\033[33m2\033[32m]?\n>\033[0m";
 	std::cin >> option;
 	switch (option) {
 	case 1:
@@ -156,6 +156,15 @@ void makeClass() {
 }
 
 int main(int argc, char *argv[]) {
+
+	std::cout << "\033[32m";
+	std::cout <<   "   __________  ____     ________    ____" << std::endl;
+	std::cout <<   "  / ____/ __ \\/ __ \\   / ____/ /   /  _/" << std::endl;
+	std::cout <<   " / /   / /_/ / /_/ /  / /   / /    / /  " << std::endl;
+	std::cout <<   "/ /___/ ____/ ____/  / /___/ /____/ /   " << std::endl;
+	std::cout << "\\____/_/   /_/       \\____/_____/___/   " << std::endl;
+	std::cout <<   "                                        " << std::endl;
+
 	namespace po = boost::program_options;
 
 	po::options_description desc("CPP-CLI");
