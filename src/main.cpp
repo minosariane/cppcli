@@ -7,6 +7,7 @@
 #include <filesystem>
 
 #include "../include/Class.hpp"
+#include "../include/Color.hpp"
 
 void makeDir(std::string dir)
 {
@@ -64,13 +65,14 @@ void makeProject(std::string projectName)
 }
 
 void makeClass() {
-	std::cout << "\033[32mWhat will be your class name ?\n>\033[0m";
+	std::cout << Color::Green("What will be your class name ?\n>");
 	std::string className;
 	std::cin >> className;
 	Class newClass(className);
 	std::string path("include/" + newClass.getName() + ".hpp");
-	if (std::filesystem::exists(path)) {
-		std::cout << "\033[32mClass \033[33m[" + newClass.getName() + "] \033[32malready exists. ";
+	bool fileExists = std::filesystem::exists(path);
+	if (fileExists) {
+		std::cout << Color::Green("Class ") + Color::Yellow("[" + newClass.getName() + "] ") + Color::Green("already exists. ");
 		std::fstream HPP(path, std::ios::in);
 		if (!HPP.is_open()) {
 				std::cerr << "Error! Cannot open file " << path << std::endl;
@@ -102,19 +104,19 @@ void makeClass() {
 	std::string inputName, inputReturnType, choice;
 
 	int option;
-	std::cout << "\033[32mAdd methods[\033[33m1\033[32m] or members[\033[33m2\033[32m]?\n>\033[0m";
+	std::cout << Color::Green("Add methods[") + Color::Yellow("1") + Color::Green("] or members[") + Color::Yellow("2") + Color::Green("]?\n>");
 	std::cin >> option;
 	switch (option) {
 	case 1:
 		while (true) {
-			std::cout << "\033[32mAdd a method to the class \033[33m[" + newClass.getName() + "]\033[32m ('s' to save)\n>\033[0m";
+			std::cout << Color::Green("Add a method to the class ") + Color::Yellow("[" + newClass.getName() + "]") + Color::Green(" ('s' to save)\n>");
 			std::cin >> inputName;
 
 			if (inputName == "s") {
 				break;
 			}
 
-			std::cout << "\033[32mWhat is the return type of \033[33m[" + inputName + "]\033[32m?\n>\033[0m";
+			std::cout << Color::Green("What is the return type of ") + Color::Yellow("[" + inputName + "]") + Color::Green("?\n>");
 			std::cin >> inputReturnType;
 
 			methods.push_back(std::make_pair(inputReturnType, inputName));
@@ -124,14 +126,14 @@ void makeClass() {
 		break;
 	case 2:
 		while (true) {
-			std::cout << "\033[32mAdd a member to the class \033[33m[" + newClass.getName() + "]\033[32m ('s' to save)\n>\033[0m";
+			std::cout << Color::Green("Add a member to the class ") + Color::Yellow("[" + newClass.getName() + "]") + Color::Green(" ('s' to save)\n>");
 			std::cin >> inputName;
 
 			if (inputName == "s") {
 				break;
 			}
 
-			std::cout << "\033[32mWhat is the type of \033[33m[" + inputName + "]\033[32m?\n>\033[0m";
+			std::cout << Color::Green("What is the type of ") + Color::Yellow("[" + inputName + "]") + Color::Green("?\n>");
 			std::cin >> inputReturnType;
 
 			members.push_back(std::make_pair(inputReturnType, inputName));
@@ -140,7 +142,7 @@ void makeClass() {
 		newClass.setMembers(members);
 
 		do {
-			std::cout << "\033[32mGenerate getters and setters? [y/n] \033[0m";
+			std::cout << Color::Green("Generate getters and setters? [") + Color::Yellow("y") + Color::Green("/") + Color::Yellow("n") + Color::Green("]?\n>");
 			std::cin >> choice;
 		} while (!std::cin.fail() && choice != "y" && choice != "n");
 
@@ -153,17 +155,20 @@ void makeClass() {
 		break;
 	}
     newClass.generate();
+	if (!fileExists) {
+		std::cout << Color::Green("Updating CMake files...") << std::endl;
+		std::system("cmake -B build");
+	}
 }
 
 int main(int argc, char *argv[]) {
 
-	std::cout << "\033[32m";
-	std::cout <<   "   __________  ____     ________    ____" << std::endl;
-	std::cout <<   "  / ____/ __ \\/ __ \\   / ____/ /   /  _/" << std::endl;
-	std::cout <<   " / /   / /_/ / /_/ /  / /   / /    / /  " << std::endl;
-	std::cout <<   "/ /___/ ____/ ____/  / /___/ /____/ /   " << std::endl;
-	std::cout << "\\____/_/   /_/       \\____/_____/___/   " << std::endl;
-	std::cout <<   "                                        " << std::endl;
+	std::cout << Color::Green("   __________  ____     ________    ____") << std::endl;
+	std::cout << Color::Green("  / ____/ __ \\/ __ \\   / ____/ /   /  _/") << std::endl;
+	std::cout << Color::Green(" / /   / /_/ / /_/ /  / /   / /    / /  ") << std::endl;
+	std::cout << Color::Green("/ /___/ ____/ ____/  / /___/ /____/ /   ") << std::endl;
+	std::cout << Color::Green("\\____/_/   /_/       \\____/_____/___/   ") << std::endl;
+	std::cout << Color::Green("                                        ") << std::endl;
 
 	namespace po = boost::program_options;
 
