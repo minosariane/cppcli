@@ -193,18 +193,12 @@ void makeClass() {
 
 int main(int argc, char *argv[]) {
 
-  std::cout << Color::Green("   __________  ____     ________    ____")
-            << std::endl;
-  std::cout << Color::Green("  / ____/ __ \\/ __ \\   / ____/ /   /  _/")
-            << std::endl;
-  std::cout << Color::Green(" / /   / /_/ / /_/ /  / /   / /    / /  ")
-            << std::endl;
-  std::cout << Color::Green("/ /___/ ____/ ____/  / /___/ /____/ /   ")
-            << std::endl;
-  std::cout << Color::Green("\\____/_/   /_/       \\____/_____/___/   ")
-            << std::endl;
-  std::cout << Color::Green("                                        ")
-            << std::endl;
+  std::cout << Color::Green(    "   __________  ____     ________    ____\n"
+                                    "  / ____/ __ \\/ __ \\   / ____/ /   /  _/\n"
+                                    " / /   / /_/ / /_/ /  / /   / /    / /  \n"
+                                    "/ /___/ ____/ ____/  / /___/ /____/ /   \n"
+                                    "\\____/_/   /_/       \\____/_____/___/   \n"
+                                    "                                        ") << std::endl;
 
   namespace po = boost::program_options;
 
