@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/cppcli.dir/src/Class.cpp.o CMakeFiles/cppcli.dir/src/Colour.cpp.o CMakeFiles/cppcli.dir/src/main.cpp.o -o bin/cppcli  -lboost_program_options 
+/usr/bin/c++ -rdynamic CMakeFiles/cppcli.dir/src/Class.cpp.o CMakeFiles/cppcli.dir/src/Colour.cpp.o CMakeFiles/cppcli.dir/src/Utils.cpp.o CMakeFiles/cppcli.dir/src/main.cpp.o -o bin/cppcli  -lboost_program_options 

@@ -21,8 +21,6 @@ class Class
     void preview();
 
     private:
-    std::string toUpperCase(std::string& str);
-    std::string toUcFirst(std::string& str);
     void write(std::string& path, std::string& content);
 
     private:

@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/cppcli.dir/src/Class.cpp.o.d"
   "CMakeFiles/cppcli.dir/src/Colour.cpp.o"
   "CMakeFiles/cppcli.dir/src/Colour.cpp.o.d"
+  "CMakeFiles/cppcli.dir/src/Utils.cpp.o"
+  "CMakeFiles/cppcli.dir/src/Utils.cpp.o.d"
   "CMakeFiles/cppcli.dir/src/main.cpp.o"
   "CMakeFiles/cppcli.dir/src/main.cpp.o.d"
   "bin/cppcli"

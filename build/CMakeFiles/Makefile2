@@ -81,12 +81,12 @@ clean: CMakeFiles/cppcli.dir/clean
 CMakeFiles/cppcli.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cppcli.dir/build.make CMakeFiles/cppcli.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mickael/Documents/dev/cpp/cppcli/build/CMakeFiles --progress-num=1,2,3,4 "Built target cppcli"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mickael/Documents/dev/cpp/cppcli/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target cppcli"
 .PHONY : CMakeFiles/cppcli.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cppcli.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mickael/Documents/dev/cpp/cppcli/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mickael/Documents/dev/cpp/cppcli/build/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cppcli.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mickael/Documents/dev/cpp/cppcli/build/CMakeFiles 0
 .PHONY : CMakeFiles/cppcli.dir/rule

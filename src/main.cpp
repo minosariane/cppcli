@@ -14,6 +14,7 @@
 
 #include "../include/Class.hpp"
 #include "../include/Colour.hpp"
+#include "../include/Utils.hpp"
 
 /**
  * @brief Verifies that the specified directory exists. If it doesn't, it is created.
@@ -228,6 +229,28 @@ void makeClass() {
 	}
 }
 
+void makeHeader()
+{
+	std::string headerName;
+	std::cout << Colour::Green("What's the name of the header?\n>");
+	std::cin >> headerName;
+
+	std::string fileName = "include/" + Utils::toUcFirst(headerName) + ".hpp";
+
+	std::fstream headerFile;
+	makeDir("include");
+	makeFile(headerFile, fileName);
+
+	headerFile << 	"#ifndef " + Utils::toUpperCase(headerName) + "_HPP" +
+					"\n#define " + Utils::toUpperCase(headerName) + "_HPP" +
+					"\n\n\n" +
+					"#endif//" + Utils::toUpperCase(headerName) + "_HPP";
+
+	headerFile.close();
+
+	std::cout << Colour::Green("Header created successfully");
+}
+
 /**
  * @brief Program's entry point
  * 
@@ -251,7 +274,7 @@ int main(int argc, char *argv[]) {
 	po::options_description desc("CPP-CLI");
 
 	desc.add_options()("help,h", "Display help message")(
-			"make,m", po::value<std::string>(), "Make [class]")(
+			"make,m", po::value<std::string>(), "Make (class | header)")(
 			"new,n", po::value<std::string>(), "create new project");
 
 	po::variables_map vm;
@@ -263,6 +286,13 @@ int main(int argc, char *argv[]) {
 	} else if (vm.count("make")) {
 		if (vm["make"].as<std::string>() == "class") {
 			makeClass();
+		}
+		else if (vm["make"].as<std::string>() == "header") {
+			makeHeader();
+		}
+		else {
+			std::string wrongCommand = vm["make"].as<std::string>();
+			std::cout << Colour::Green(wrongCommand + "...\nReally?\n\n") << Colour::Red("Let's just read the bloody manual and type a valid command, shall we?") << std::endl;
 		}
 	} else if (vm.count("new")) {
 		makeProject(vm["new"].as<std::string>());

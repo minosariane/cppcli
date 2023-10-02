@@ -1,4 +1,6 @@
 #include "../include/Class.hpp"
+#include "../include/Utils.hpp"
+
 #include <iostream>
 #include <regex>
 
@@ -10,14 +12,14 @@
 Class::Class(std::string& name)
 {
     this->setName(name);
-    this->HPP =  "#ifndef " + this->toUpperCase(this->name) + "_HPP\n";
-    this->HPP += "#define " + this->toUpperCase(this->name) + "_HPP\n\n";
+    this->HPP =  "#ifndef " + Utils::toUpperCase(this->name) + "_HPP\n";
+    this->HPP += "#define " + Utils::toUpperCase(this->name) + "_HPP\n\n";
     this->HPP += "class " + this->name + "\n";
     this->HPP += "{\n";
     this->HPP += "\tpublic:\n\t" + this->name + "();\n\t~" + this->name + "();\n\n";
     this->HPP += "\tprivate:\n";
     this->HPP += "};\n\n";
-    this->HPP += "#endif//" + this->toUpperCase(this->name) + "_HPP";
+    this->HPP += "#endif//" + Utils::toUpperCase(this->name) + "_HPP";
 
     this->CPP =  "#include \"../include/" + this->name + ".hpp\"\n\n";
     this->CPP += this->name + "::" + this->name + "()\n";
@@ -42,7 +44,7 @@ Class::~Class()
  */
 void Class::setName(std::string& name)
 {
-    this->name = toUcFirst(name);
+    this->name = Utils::toUcFirst(name);
 }
 
 /**
@@ -103,15 +105,15 @@ void Class::addSettersGetters()
 {
     std::regex regex(R"((\n\tprivate\:))");
     for (auto& member : this->members) {
-        this->CPP += "void " + this->name + "::set" + this->toUcFirst(member.second) + "(" + member.first + "& " + member.second + ")\n";
+        this->CPP += "void " + this->name + "::set" + Utils::toUcFirst(member.second) + "(" + member.first + "& " + member.second + ")\n";
         this->CPP += "{\n";
         this->CPP += "\tthis->" + member.second + " = " + member.second + ";\n}\n\n";
-        this->CPP += member.first + " " + this->name + "::get" + this->toUcFirst(member.second) + "()\n";
+        this->CPP += member.first + " " + this->name + "::get" + Utils::toUcFirst(member.second) + "()\n";
         this->CPP += "{\n";
         this->CPP += "\treturn this->" + member.second + ";\n}\n\n";
-        std::string rempacement("\t" + member.first + " get" + this->toUcFirst(member.second) + "();\n$1");
+        std::string rempacement("\t" + member.first + " get" + Utils::toUcFirst(member.second) + "();\n$1");
         this->HPP = std::regex_replace(this->HPP, regex, rempacement);
-        rempacement = "\tvoid set" + this->toUcFirst(member.second) + "(" + member.first + "& " + member.second + ");\n$1";
+        rempacement = "\tvoid set" + Utils::toUcFirst(member.second) + "(" + member.first + "& " + member.second + ");\n$1";
         this->HPP = std::regex_replace(this->HPP, regex, rempacement);
     }
 }
@@ -153,36 +155,6 @@ void Class::preview()
 }
 
 // PRIVATE
-
-/**
- * @brief 
- * 
- * @param str 
- * @return std::string 
- */
-std::string Class::toUpperCase(std::string& str)
-{
-    std::string res = str;
-    for (char& c : res) {
-        c = std::toupper(c);
-    }
-
-    return res;
-}
-
-/**
- * @brief 
- * 
- * @param str 
- * @return std::string 
- */
-std::string Class::toUcFirst(std::string& str)
-{
-    std::string res = str;
-    res[0] = std::toupper(res[0]);
-
-    return res;
-}
 
 /**
  * @brief 
