@@ -6,6 +6,8 @@ A simple CLI that can generate C++ code because I'm too lazy to type it myself
 Boost 1.82.0-r1
 
 CMake 3.26.5
+
+### Compilation
 * `mkdir build/`
 * `cmake -B build/`
 * `cmake --build build/`
